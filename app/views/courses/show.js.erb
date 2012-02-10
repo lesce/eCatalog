@@ -1,11 +1,11 @@
 $('#courses_ajax').html('<h1>Materie: <%= @course.name %></h1>');
 msg = "<form accept-charset='UTF-8' action='/add_by_course' class='form-horizontal' data-remote='true' id='add_by_courses_id' method='post'>";
-msg += "<table class='table'>";
+msg += "<table class='table table-condensed table-bordered'>";
 msg +="<th>Nume Elev</th><th>Nota</th><th>Absente</th>";
 <% @students.each do |student|%>
   msg +="<tr><td><%= student.name%></td>";
-  msg +="<td><input class='span2' id='course_grade' name='grade[student_id]' size='30' type='integer' /></td>";
-  msg +="<td><input class='span2' id='course_absence' name='absence[student_id]' size='30' type='date' /></td>";
+  msg +="<td><input class='span2' id='course_grade' name='grade[student_id]' size='30' type='number' min=1 max=10 /></td>";
+  msg +="<td><input class='span2' id='course_absence' name='absence[student_id]' size='30' type='datetime' /></td>";
   msg +="</tr>";
 <%end%>  
 msg +="</table><input class='btn-primary' name='commit' type='submit' value='Salveaza' />";
