@@ -10,8 +10,8 @@
       </ul>
     </div>
   <% end %>
-  <%= f.text_field :name ,value: "Nume" , class: 'span2'   %>
-  <%= f.text_field :email ,value: "Email" ,class: 'span1' %>
-  <%= f.text_field :parent_email, value: "Email Parinte",class: 'span2' %>
+  <%= f.text_field :name ,placeholder: "Nume" , class: 'span2'   %>
+  <%= f.text_field :email ,placeholder: "Email" ,class: 'span1' %>
+  <%= f.text_field :parent_email, placeholder: "Email Parinte",class: 'span2' %>
   <%= f.submit "Adauga", class: 'btn-primary'%>
 <% end %>
