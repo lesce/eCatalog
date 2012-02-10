@@ -32,7 +32,10 @@ class CoursesController < ApplicationController
 
   # GET /courses/1/edit
   def edit
-    @course = Course.find(params[:id])
+    @course = current_user.groups[0].courses.find(params[:id])
+    respond_to do |format|
+      format.js
+    end
   end
 
   # POST /courses
