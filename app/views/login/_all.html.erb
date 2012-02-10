@@ -1,0 +1,53 @@
+<div class="row">
+<div class="span6">
+<h1>Materii</h1>
+<table id="materii" class="table table-condensed table-bordered">
+  <tr>
+    <th>Nume</th>
+    <th>Profesor</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @courses.each do |course| %>
+  <tr>
+    <td><%= course.name %></td>
+    <td><%= course.profesor %></td>
+    <td><%= link_to 'Gestionare', course ,:method => 'get',:remote=>true, class: 'btn btn-success '%></td>
+    <td><%= link_to 'Editare', edit_course_path(course) ,class: 'btn btn-warning '%></td>
+    <td><%= link_to 'Sterge', course, confirm: 'Are you sure?', method: :delete ,class: 'btn btn-danger '%></td>
+  </tr>
+<% end %>
+</table>
+<br />
+<%= render 'courses/form' %>
+</div>
+<div class="span6" id="courses_ajax">
+<h1>Elevi</h1>
+<table id="elevi" class="table table-condensed table-bordered">
+  <tr>
+    <th>Nume</th>
+    <th>Email</th>
+    <th>Email parinte</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @students.each do |student| %>
+  <tr>
+    <td><%= student.name %></td>
+    <td><%= student.email %></td>
+    <td><%= student.parent_email %></td>
+    <td><%= link_to 'Gestionare', student , class: 'btn btn-success' %></td>
+    <td><%= link_to 'Edit', edit_student_path(student) ,class: 'btn btn-warning'%></td>
+    <td><%= link_to 'Destroy', student, confirm: 'Are you sure?', method: :delete ,class: 'btn btn-danger'%></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%= render 'students/form' %>
+</div>
+</div>

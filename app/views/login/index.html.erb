@@ -1,0 +1,14 @@
+<% unless current_user%>
+  <div class="row">
+    <div class="span6" style="text-align:right">
+      <h1>Login</h1>
+      <%= render 'login'%>
+    </div>
+    <div class="span6">
+      <h1>Inregistrare</h1>
+      <%= render 'register'%>
+    </div>
+  </div>
+<%else%>
+  <%= render 'all' %>
+<%end%>

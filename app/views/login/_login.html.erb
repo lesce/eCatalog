@@ -1,0 +1,9 @@
+<%= form_tag "/sessions" , :method => 'post' do  %>
+    <%= label_tag "Email" %><br />
+    <%= text_field_tag :email %>
+    <%= label_tag "Parola" %><br />
+    <%= password_field_tag :password %>
+  <div class="actions">
+    <%= submit_tag "Login" , :class => 'btn btn-primary' %>
+  </div>
+<%end%>

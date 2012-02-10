@@ -1,0 +1,24 @@
+<div class="span6">
+<h1>Elevi</h1>
+<table id="elevi" class="table table-condensed table-bordered">
+  <tr>
+    <th>Nume</th>
+    <th>Email</th>
+    <th>Email parinte</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @students.each do |student| %>
+  <tr>
+    <td><%= student.name %></td>
+    <td><%= student.email %></td>
+    <td><%= student.parent_email %></td>
+    <td><%= link_to 'Gestionare', student , class: 'btn btn-success' %></td>
+    <td><%= link_to 'Edit', edit_student_path(student) ,class: 'btn btn-warning'%></td>
+    <td><%= link_to 'Destroy', student, confirm: 'Are you sure?', method: :delete ,class: 'btn btn-danger'%></td>
+  </tr>
+<% end %>
+</table>
+

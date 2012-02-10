@@ -1,0 +1,17 @@
+<%= form_for @student,html: {:class => "form-horizontal"} ,remote: true,method:'post' do |f| %>
+  <% if @student.errors.any? %>
+    <div id="error_explanation" class="control-group error">
+      <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
+
+      <ul>
+      <% @student.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.text_field :name ,value: "Nume" , class: 'span2'   %>
+  <%= f.text_field :email ,value: "Email" ,class: 'span1' %>
+  <%= f.text_field :parent_email, value: "Email Parinte",class: 'span2' %>
+  <%= f.submit "Adauga", class: 'btn-primary'%>
+<% end %>
