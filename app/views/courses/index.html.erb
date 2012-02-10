@@ -6,17 +6,13 @@
     <th>Nume</th>
     <th>Profesor</th>
     <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @courses.each do |course| %>
   <tr>
     <td><%= course.name %></td>
     <td><%= course.profesor %></td>
-    <td><%= link_to 'Gestionare', course ,method: 'get',:remote=>true, class: 'btn btn-success' %></td>
-    <td><%= link_to 'Editare', edit_course_path(course) ,class: 'btn btn-warning '%></td>
-    <td><%= link_to 'Sterge', course, confirm: 'Are you sure?', method: :delete ,class: 'btn btn-danger '%></td>
+    <td><%= link_to 'Gestionare', course ,method: 'get',:remote=>true, class: 'btn btn-primary' %></td>
   </tr>
 <% end %>
 </table>
