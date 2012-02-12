@@ -1,0 +1,8 @@
+<tr>
+    <td><%= @student.name %></td>
+    <td><%= @student.email %></td>
+    <td><%= @student.parent_email %></td>
+    <td><%= link_to 'Editeaza', edit_student_path(@student) ,:method => 'get',:remote => true,class: 'btn btn-info'%></td>
+    <td><%= link_to 'Sterge', @student, confirm: 'Are you sure?', method: :delete ,class: 'btn btn-warning'%></td>
+</tr>
+

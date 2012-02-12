@@ -1,4 +1,17 @@
 class StudentsController < ApplicationController
+  def add
+    @student = current_user.groups[0].students.find_by_id(params[:id])
+    @course = current_user.groups[0].courses.find_by_id(params[:courses][:id])
+    if params[:grade].empty? 
+      x = Absence.create(date: Date.new(params[:date][:year],params[:date][:month],params[:date][:day]))       
+      @student.absences << x
+      @course.absences << x
+    else
+      x = Grade.create(value: params[:grade],date: params[:date])
+      @student.grades << x
+      @course.grades << x
+    end
+  end
   # GET /students
   # GET /students.json
   def index
@@ -13,9 +26,10 @@ class StudentsController < ApplicationController
   # GET /students/1
   # GET /students/1.json
   def show
-    @student = Student.find(params[:id])
+    @student = current_user.groups[0].students.find(params[:id])
 
     respond_to do |format|
+      format.js
       format.html # show.html.erb
       format.json { render json: @student }
     end
@@ -60,7 +74,7 @@ class StudentsController < ApplicationController
 
     respond_to do |format|
       if @student.update_attributes(params[:student])
-        format.html { redirect_to @student, notice: 'Student was successfully updated.' }
+        format.html { redirect_to login_index_path, notice: 'Student was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }

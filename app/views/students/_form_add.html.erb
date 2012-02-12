@@ -1,0 +1,9 @@
+<h1><%=@student.name%></h1>
+<%= form_tag 'students/add' do %>
+  <%= number_field_tag  :id , @student.id , type: "hidden"%>
+  <%= collection_select(:courses , :id, current_user.groups[0].courses , :id , :name )%>
+	<%= number_field_tag :grade %>
+  <%= select_date Date.today %>
+  <%= submit_tag "Adauga" ,class: 'btn btn-info'%>
+<%end%>
+

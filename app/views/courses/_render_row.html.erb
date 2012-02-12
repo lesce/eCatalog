@@ -1,0 +1,7 @@
+ <tr>
+   <td><%=@course.name %></td>
+   <td><%=@course.profesor%></td>
+   <td><%= link_to 'Editeaza',edit_course_path(@course) ,:method => 'get',:remote => true ,class: 'btn btn-info'%></td>
+   <td><%= link_to 'Sterge', @course, confirm: 'Are you sure?', method: :delete ,class: 'btn btn-warning '%></td>
+ </tr>
+

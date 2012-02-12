@@ -15,6 +15,8 @@ ActiveRecord::Schema.define(:version => 20120210140243) do
 
   create_table "absences", :force => true do |t|
     t.date     "date"
+    t.integer  "student_id"
+    t.integer  "course_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -30,6 +32,8 @@ ActiveRecord::Schema.define(:version => 20120210140243) do
   create_table "grades", :force => true do |t|
     t.decimal  "value"
     t.date     "date"
+    t.integer  "student_id"
+    t.integer  "course_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

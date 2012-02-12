@@ -1,7 +1,7 @@
 <div class="row">
 <div class="span6">
 <h1>Materii</h1>
-<table id="materii" class="table table-condensed table-bordered">
+<table id="materii" class="table table-condensed">
   <tr>
     <th>Nume</th>
     <th>Profesor</th>
@@ -25,7 +25,7 @@
 </div>
 <div class="span6">
 <h1>Elevi</h1>
-<table id="elevi" class="table table-condensed table-bordered">
+<table id="elevi" class="table table-condensed">
   <tr>
     <th>Nume</th>
     <th>Email</th>
@@ -39,7 +39,7 @@
     <td><%= student.name %></td>
     <td><%= student.email %></td>
     <td><%= student.parent_email %></td>
-    <td><%= link_to 'Editeaza', edit_student_path(student) ,class: 'btn btn-info'%></td>
+    <td><%= link_to 'Editeaza', edit_student_path(student) ,:method => 'get',:remote => true,class: 'btn btn-info'%></td>
     <td><%= link_to 'Sterge', student, confirm: 'Are you sure?', method: :delete ,class: 'btn btn-warning'%></td>
   </tr>
 <% end %>

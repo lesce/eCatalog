@@ -1,10 +1,18 @@
 Ecatalog::Application.routes.draw do
-  resources :courses
+  resources :courses do
+    collection do 
+      post 'add'
+    end
+  end
   resources :absences
 
   resources :grades
 
-  resources :students
+  resources :students do
+    collection do
+      post 'add'
+    end
+  end
 
   resources :groups
 
@@ -12,6 +20,7 @@ Ecatalog::Application.routes.draw do
 
   resources :login
   resources :sessions
+
   match 'logout' => 'sessions#destroy' 
   # The priority is based upon order of creation:
   # first created -> highest priority.

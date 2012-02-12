@@ -1,1 +1,1 @@
-$('#materii').append("<tr><td><%= @course.name %></td><td><%=@course.profesor%></td><td><a href='/courses/<%=@course.id%>' class='btn btn-success'>Gestionare</a></td><td><a href='/courses/<%=@course.id%>/edit' class='btn btn-warning'>Editare</a></td><td><a href='/courses/<%=@course.id%>' class='btn btn-danger' data-confirm='Are you sure?' data-method='delete' rel='nofollow'>Sterge</a></td>");
+$('#materii').append("<%= escape_javascript(render(:partial => 'render_row'))%>");

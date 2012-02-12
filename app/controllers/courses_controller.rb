@@ -3,6 +3,8 @@ class CoursesController < ApplicationController
   # GET /courses.json
   def index
     @courses = current_user.groups[0].courses
+    @students = current_user.groups[0].students
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @courses }
@@ -59,11 +61,11 @@ class CoursesController < ApplicationController
   # PUT /courses/1
   # PUT /courses/1.json
   def update
-    @course = Course.find(params[:id])
+    @course = current_user.groups[0].courses.find(params[:id])
 
     respond_to do |format|
       if @course.update_attributes(params[:course])
-        format.html { redirect_to @course, notice: 'Course was successfully updated.' }
+        format.html { redirect_to login_index_path, notice: 'Course was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
