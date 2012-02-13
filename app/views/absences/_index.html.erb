@@ -1,0 +1,20 @@
+<h1>Absente</h1>
+<table class="table table-striped">
+<% @students.each do |student|%>
+	<tr>
+		<th><%=student.name%></th>
+	</tr>
+  <tr>
+    <th>Absenta</th>
+    <th>Materie</th>
+  </tr>
+
+<% student.absences.each do |absence| %>
+  <tr>
+    <td><%= absence.date %></td>
+		<td><%= absence.course.name %></td>
+		<td><%= absence.student.name %></td>
+  </tr>
+<% end %>
+<%end%>
+</table>

@@ -1,0 +1,22 @@
+<h1>Note</h1>
+
+<table class="table table-striped">
+	<%@students.each do |student|%>
+  <tr>
+		<th> <%=student.name%> </th>
+	</tr>
+	<tr>
+    <th>Nota</th>
+    <th>Data</th>
+    <th>Materie</th>
+  </tr>
+
+<% student.grades.each do |grade| %>
+  <tr>
+    <td><%= grade.value %></td>
+    <td><%= grade.date %></td>
+		<td><%= grade.course.name %></td>
+  </tr>
+<%end%>
+<%end%>
+</table>

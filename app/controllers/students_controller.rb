@@ -3,11 +3,13 @@ class StudentsController < ApplicationController
     @student = current_user.groups[0].students.find_by_id(params[:id])
     @course = current_user.groups[0].courses.find_by_id(params[:courses][:id])
     if params[:grade].empty? 
-      x = Absence.create(date: Date.new(params[:date][:year],params[:date][:month],params[:date][:day]))       
+      data = Date.civil(params[:date][:year].to_i,params[:date][:month].to_i,params[:date][:day].to_i)
+      x = Absence.create(date: data)       
       @student.absences << x
       @course.absences << x
     else
-      x = Grade.create(value: params[:grade],date: params[:date])
+      data = Date.civil(params[:date][:year].to_i,params[:date][:month].to_i,params[:date][:day].to_i)
+      x = Grade.create(value: params[:grade],date: data)
       @student.grades << x
       @course.grades << x
     end

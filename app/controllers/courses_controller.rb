@@ -1,6 +1,20 @@
 class CoursesController < ApplicationController
-  # GET /courses
-  # GET /courses.json
+  def add
+    students = current_user.groups[0].students
+    course = current_user.groups[0].courses.find_by_id(params[:id])
+    data = Date.civil(params[:date][:year].to_i,params[:date][:month].to_i,params[:date][:day].to_i)
+    students.each do |student|
+      if !params[student.id.to_s].empty?
+        grade = Grade.new(value: params[student.id.to_s] , date: data) 
+        student.grades << grade
+        course.grades << grade
+      else
+        absence = Absence.new(date: data) 
+        student.absences << absence
+        course.absences << absence
+      end
+    end
+  end
   def index
     @courses = current_user.groups[0].courses
     @students = current_user.groups[0].students

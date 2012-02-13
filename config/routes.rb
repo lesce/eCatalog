@@ -17,7 +17,7 @@ Ecatalog::Application.routes.draw do
   resources :groups
 
   resources :users
-
+  resources :catalogs
   resources :login
   resources :sessions
 

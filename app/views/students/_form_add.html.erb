@@ -1,9 +1,15 @@
-<h1><%=@student.name%></h1>
-<%= form_tag 'students/add' do %>
-  <%= number_field_tag  :id , @student.id , type: "hidden"%>
-  <%= collection_select(:courses , :id, current_user.groups[0].courses , :id , :name )%>
-	<%= number_field_tag :grade %>
-  <%= select_date Date.today %>
-  <%= submit_tag "Adauga" ,class: 'btn btn-info'%>
-<%end%>
+<div class="row">
+	<h1><%=@student.name%></h1>
+	<%= form_tag 'students/add' ,remote: true do %>
+	<div class="span3">
+	  <%= number_field_tag  :id , @student.id , type: "hidden"%>
+	  <%= collection_select(:courses , :id, current_user.groups[0].courses , :id , :name )%>
+		<%= number_field_tag :grade , nil , in: 1..10%>
+	</div>
+	<div class="span3">
+	  <%= select_date Date.today %>
+	  <%= submit_tag "Adauga" ,class: 'btn btn-info'%>
+	</div>
+	<%end%>
+</div>
 

@@ -1,4 +1,16 @@
-<%= form_tag 'courses/add' do %>
-	<%=text_field_tag :name%>
-	<%=label_tag :name%>		
-<%end%>
+<div class="row">
+	<h1><%=@course.name%></h1>
+	<%= form_tag 'courses/add',remote: true do %>
+		<%= number_field_tag  :id , @course.id , type: "hidden"%>
+		<div class="span3">
+			<% current_user.groups[0].students.each do |student|%>
+				<%= label_tag :name , student.name%>
+				<%= number_field_tag student.id , nil,in: 1..10 %>
+			<%end%>
+		</div>
+		<div class="span3">
+			<%= select_date Date.today %>	
+			<%= submit_tag "Adauga" ,class: 'btn btn-info'%>
+		</div>	
+	<%end%>
+</div>
