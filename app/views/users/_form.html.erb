@@ -12,18 +12,22 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label "Nume" %><br />
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label "Email" %><br />
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :password_digest %><br />
-    <%= f.text_field :password_digest %>
+    <%= f.label "Parola" %><br />
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label "Confirmare parola" %><br />
+    <%= f.password_field :password_confirmation %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Salveaza",class:'btn' %>
   </div>
 <% end %>
