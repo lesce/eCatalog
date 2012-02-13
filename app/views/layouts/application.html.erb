@@ -36,6 +36,14 @@
       </div>
     </div>
   </div>
+    <div id="notificari",class="span3">
+      <% if flash[:notice] %>
+        <div class="alert alert-info">
+          <%= link_to 'x' , 'clear' ,remote: true%>
+          <%=flash[:notice]%>
+        </div>
+      <%end%>
+    </div>
   <div class="container">
   <%= yield %>
   </div>

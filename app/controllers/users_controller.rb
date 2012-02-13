@@ -1,39 +1,4 @@
 class UsersController < ApplicationController
-  # GET /users
-  # GET /users.json
-  def index
-    @users = User.all
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @users }
-    end
-    #else
-    #  redirect_to user_path(current_user)
-    #end
-  end
-
-  # GET /users/1
-  # GET /users/1.json
-  def show
-    @user = User.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @user }
-    end
-  end
-
-  # GET /users/new
-  # GET /users/new.json
-  def new
-    @user = User.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @user }
-    end
-  end
-
   # GET /users/1/edit
   def edit
     @mygrade = []
@@ -54,7 +19,7 @@ class UsersController < ApplicationController
         format.html { redirect_to login_index_path, notice: 'User was successfully created.' }
         format.json { render json: @user, status: :created, location: @user }
       else
-        format.html { render action: "new" }
+        format.html { redirect_to login_index_path, notice: 'Email incorect' }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end

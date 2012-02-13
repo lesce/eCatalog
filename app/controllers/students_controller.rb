@@ -7,17 +7,19 @@ class StudentsController < ApplicationController
       x = Absence.create(date: data)       
       @student.absences << x
       @course.absences << x
+      RaportAbsente.send_raport(x).deliver
     else
       data = Date.civil(params[:date][:year].to_i,params[:date][:month].to_i,params[:date][:day].to_i)
       x = Grade.create(value: params[:grade],date: data)
       @student.grades << x
       @course.grades << x
+      RaportNote.send_raport(x).deliver
     end
   end
   # GET /students
   # GET /students.json
   def index
-    @students = Student.all
+    @students = current_user.groups[0].students
 
     respond_to do |format|
       format.html # index.html.erb

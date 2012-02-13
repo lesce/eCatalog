@@ -20,7 +20,7 @@ Ecatalog::Application.routes.draw do
   resources :catalogs
   resources :login
   resources :sessions
-
+  match 'clear' => 'login#clear'
   match 'logout' => 'sessions#destroy' 
   # The priority is based upon order of creation:
   # first created -> highest priority.

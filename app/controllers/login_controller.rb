@@ -9,4 +9,6 @@ class LoginController < ApplicationController
     @student = Student.new
     @course = Course.new
   end
+  def clear
+  end
 end

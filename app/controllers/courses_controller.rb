@@ -8,10 +8,12 @@ class CoursesController < ApplicationController
         grade = Grade.new(value: params[student.id.to_s] , date: data) 
         student.grades << grade
         course.grades << grade
+        RaportNote.send_raport(grade).deliver
       else
         absence = Absence.new(date: data) 
         student.absences << absence
         course.absences << absence
+        RaportAbsente.send_raport(absence).deliver
       end
     end
   end
