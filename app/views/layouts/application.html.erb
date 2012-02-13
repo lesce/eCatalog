@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Ecatalog</title>
+  <script src='http://www.google.com/jsapi'></script>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -19,6 +20,7 @@
           <li><%=link_to 'Materii' , courses_path %></li>
           <li><%=link_to 'Elevi' , students_path %></li>
 					<li><%=link_to 'Catalog' , catalogs_path %></li>
+					<li><%=link_to 'Grafice' , '/catalogs/show' %></li>
         </ul>
         <ul class="nav pull-right">
           <li class="divider-vertical"></li>
