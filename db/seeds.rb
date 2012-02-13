@@ -30,5 +30,3 @@ mygrp << Course.create(:name => "Logica",:profesor => "Prahoveanu Ion")
 mygrp << Course.create(:name => "Romana",:profesor => "Iliescu Mariane")
 mygrp << Course.create(:name => "Geografie",:profesor => "Raduta Vasile")
 mygrp << Course.create(:name => "Istorie",:profesor => "Roman Radita")
-
-
