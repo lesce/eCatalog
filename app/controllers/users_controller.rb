@@ -36,7 +36,10 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    @user = User.find(params[:id])
+    @mygrade = []
+    @user = current_user
+    @students = @user.groups[0].students
+    @courses = @user.groups[0].courses
   end
 
   # POST /users

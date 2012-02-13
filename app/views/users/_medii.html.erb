@@ -1,0 +1,18 @@
+<table class="table">
+  <% @students.each do |student| %>
+    <tr>  
+      <th><%= student.name %></th>
+    </tr>
+    <tr>
+      <% @courses.each do |course|%>
+        <td><%= course.name%></td>
+        <% course.grades.each do |grade| %>
+          <% if grade.student_id == student.id %>
+            <% @mygrade << grade.value  %>
+          <%end%>
+        <%end%>
+        <td><%= (@mygrade.sum/@mygrade.length).round(2) rescue 0%></td>
+        <%@mygrade = []%>
+      <%end%>
+      </tr>
+  <%end%>
