@@ -64,7 +64,7 @@ class StudentsController < ApplicationController
     @student.password_confirmation = "1111111111"
     respond_to do |format|
       if @student.save
-        format.js
+        format.js 
       else
         format.js
       end
@@ -78,7 +78,7 @@ class StudentsController < ApplicationController
 
     respond_to do |format|
       if @student.update_attributes(params[:student])
-        format.html { redirect_to login_index_path, notice: 'Student was successfully updated.' }
+        format.html { redirect_to login_index_path, notice: 'Elev adus la zi.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }

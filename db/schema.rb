@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(:version => 20120210140243) do
   end
 
   create_table "grades", :force => true do |t|
-    t.decimal  "value"
+    t.decimal  "value",      :precision => 10, :scale => 0
     t.date     "date"
     t.integer  "student_id"
     t.integer  "course_id"

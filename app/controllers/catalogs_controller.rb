@@ -38,5 +38,6 @@ class CatalogsController < ApplicationController
       aux += 1
     end
     opts   = { :width => 800, :height => 380, :title => 'Grafic note per intreaga clasa', :legend => 'bottom' }
-    @chart1 = GoogleVisualr::Interactive::LineChart.new(data_table, opts) end
+    @chart1 = GoogleVisualr::Interactive::LineChart.new(data_table, opts) 
+  end
 end

@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'therubyracer'
 gem "google_visualr", "~> 2.1.0"
 gem 'validates_email_format_of'
+gem 'mysql2'
 
 # Gems used only for assets and not required
 # in production environments by default.

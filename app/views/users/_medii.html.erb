@@ -4,6 +4,7 @@
       <th><%= student.name %></th>
     </tr>
     <tr>
+			<% aux = 0 %>
       <% @courses.each do |course|%>
         <td><%= course.name%></td>
         <% course.grades.each do |grade| %>
@@ -12,6 +13,10 @@
           <%end%>
         <%end%>
         <td><%= (@mygrade.sum/@mygrade.length).round(2) rescue 0%></td>
+				<% aux += 1%>
+				<%if aux == (@courses.length/2).round %>
+					<tr></tr>
+				<%end%>
         <%@mygrade = []%>
       <%end%>
       </tr>

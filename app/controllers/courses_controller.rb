@@ -64,7 +64,7 @@ class CoursesController < ApplicationController
     respond_to do |format|
       if @course.save
         format.js
-        format.html { redirect_to @course, notice: 'Course was successfully created.' }
+        format.html { redirect_to @course, notice: 'Materia a fost salvata.' }
         format.json { render json: @course, status: :created, location: @course }
       else
         format.js
@@ -81,7 +81,7 @@ class CoursesController < ApplicationController
 
     respond_to do |format|
       if @course.update_attributes(params[:course])
-        format.html { redirect_to login_index_path, notice: 'Course was successfully updated.' }
+        format.html { redirect_to login_index_path, notice: 'Materia a fost adusa la zi.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
