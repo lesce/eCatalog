@@ -1,4 +1,5 @@
 class AbsencesController < ApplicationController
+  before_filter :is_login
   # GET /absences
   # GET /absences.json
   def index

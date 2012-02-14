@@ -1,4 +1,5 @@
 class CatalogsController < ApplicationController
+  before_filter :is_login
   def index
     @students = current_user.groups[0].students
   end
