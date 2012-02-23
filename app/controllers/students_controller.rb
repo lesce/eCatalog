@@ -1,4 +1,5 @@
 class StudentsController < ApplicationController
+  before_filter :is_login
   def add
     @student = current_user.groups[0].students.find_by_id(params[:id])
     @course = current_user.groups[0].courses.find_by_id(params[:courses][:id])

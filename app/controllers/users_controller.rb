@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_filter :is_login , only: [:edit,:update,:destroy]
   # GET /users/1/edit
   def edit
     @mygrade = []
@@ -16,7 +17,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         session[:user_id] = @user.id
-        format.html { redirect_to login_index_path, notice: 'User was successfully created.' }
+        format.html { redirect_to login_index_path }
         format.json { render json: @user, status: :created, location: @user }
       else
         format.html { redirect_to login_index_path, notice: 'Email incorect' }
