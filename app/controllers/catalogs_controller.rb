@@ -37,7 +37,7 @@ class CatalogsController < ApplicationController
       data_table.set_cell(aux,1,absence_sum.to_i)
       aux += 1
     end
-    opts   = { :width => 800, :height => 380, :title => 'Grafic note per intreaga clasa', :legend => 'bottom' }
+    opts   = { :width => 800, :height => 380, :title => 'Grafic absente per intreaga clasa', :legend => 'bottom' }
     @chart1 = GoogleVisualr::Interactive::LineChart.new(data_table, opts) 
   end
 end

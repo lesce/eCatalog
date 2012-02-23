@@ -12,7 +12,11 @@
             <% @mygrade << grade.value  %>
           <%end%>
         <%end%>
-        <td><%= (@mygrade.sum/@mygrade.length).round(2) rescue 0%></td>
+        <% if @mygrade.sum == 0 %>
+          <td>0</td>
+        <%else%>
+          <td><%= (@mygrade.sum.to_f/@mygrade.length.to_f) %></td>
+        <%end%>
 				<% aux += 1%>
 				<%if aux == (@courses.length/2).round %>
 					<tr></tr>
