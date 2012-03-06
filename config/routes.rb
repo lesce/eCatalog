@@ -4,17 +4,12 @@ Ecatalog::Application.routes.draw do
       post 'add'
     end
   end
-  resources :absences
-
-  resources :grades
 
   resources :students do
     collection do
       post 'add'
     end
   end
-
-  resources :groups
 
   resources :users
   resources :catalogs

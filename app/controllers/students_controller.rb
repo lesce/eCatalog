@@ -61,13 +61,11 @@ class StudentsController < ApplicationController
   def create
     @student = Student.new(params[:student])
     current_user.groups[0].students << @student
-    @student.password = "1111111111"
-    @student.password_confirmation = "1111111111"
     respond_to do |format|
       if @student.save
         format.js 
       else
-        format.js
+        format.js 
       end
     end
   end

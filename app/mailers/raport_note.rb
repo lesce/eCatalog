@@ -1,5 +1,5 @@
 class RaportNote < ActionMailer::Base
-  default from: "Notificari eCatalog notificari@ecatalog.com"
+  default from: "\"Notificari eCatalog\" notificari@ecatalog.com"
   def send_raport(nota)
     @student = nota.student.name
     @nota = nota

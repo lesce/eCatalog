@@ -20,7 +20,7 @@ class UsersController < ApplicationController
         format.html { redirect_to login_index_path }
         format.json { render json: @user, status: :created, location: @user }
       else
-        format.html { redirect_to login_index_path, notice: 'Email incorect' }
+        format.html { redirect_to login_index_path, notice: 'Adresa de email introdusa a fost folosita deja.' }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to '/', notice: 'User was successfully updated.' }
+        format.html { redirect_to '/', notice: 'Cont adus la zi.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }

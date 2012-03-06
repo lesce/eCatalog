@@ -10,16 +10,16 @@ grp = Group.create(:name =>"default")
 lesce.groups << grp
 mygrp = lesce.groups[0].students
 
-mygrp << Student.create(:name => "Andrei Lescenco",:email => "lescee@gmail.com",:parent_email => "lescee@gmail.com" ,:password => "a",:password_confirmation => "a") 
-mygrp << Student.create(:name => "Ghinea Robert",:email => "ghini@gmail.com",:parent_email => "ghini@parinti.com" ,:password => "a",:password_confirmation => "a")
-mygrp << Student.create(:name => "Bogdan Ciambur",:email => "ciambur@gmail.com",:parent_email => "ciamburparinti@x.com" ,:password => "a",:password_confirmation => "a")
-mygrp << Student.create(:name => "Alex Radulescu",:email => "radu@gmail.com",:parent_email => "radu.parinti@x.com" ,:password => "a",:password_confirmation => "a")
-mygrp << Student.create(:name => "Bianca Dragomir",:email => "bianca@yahh.com",:parent_email => "bianca.parinti@x.com" ,:password => "a",:password_confirmation => "a")
-mygrp << Student.create(:name => "Luca Robert",:email => "luca@gmail.com",:parent_email => "parinti.luca@x.com" ,:password => "a",:password_confirmation => "a")
-mygrp << Student.create(:name => "Corina Bote",:email => "bote@gmail.com",:parent_email => "parinti.bote@x.com" ,:password => "a",:password_confirmation => "a")
-mygrp << Student.create(:name => "Cotfas Raluca",:email => "ctfasralu@gmail.com",:parent_email => "ctfas@x.com" ,:password => "a",:password_confirmation => "a")
-mygrp << Student.create(:name => "Victor Racariu",:email => "racariu@gmail.com",:parent_email => "vic_parinti@x.com" ,:password => "a",:password_confirmation => "a")
-mygrp << Student.create(:name => "Tudor Tolciu",:email => "2dor@gmail.com",:parent_email => "madrii@x.com" ,:password => "a",:password_confirmation => "a")
+mygrp << Student.create(:name => "Andrei Lescenco",:email => "lescee@gmail.com",:parent_email => "lescee@gmail.com" )
+mygrp << Student.create(:name => "Ghinea Robert",:email => "ghini@gmail.com",:parent_email => "ghini@parinti.com"  )
+mygrp << Student.create(:name => "Bogdan Ciambur",:email => "ciambur@gmail.com",:parent_email => "ciamburparinti@x.com" )
+mygrp << Student.create(:name => "Alex Radulescu",:email => "radu@gmail.com",:parent_email => "radu.parinti@x.com" )
+mygrp << Student.create(:name => "Bianca Dragomir",:email => "bianca@yahh.com",:parent_email => "bianca.parinti@x.com" )
+mygrp << Student.create(:name => "Luca Robert",:email => "luca@gmail.com",:parent_email => "parinti.luca@x.com" )
+mygrp << Student.create(:name => "Corina Bote",:email => "bote@gmail.com",:parent_email => "parinti.bote@x.com" )
+mygrp << Student.create(:name => "Cotfas Raluca",:email => "ctfasralu@gmail.com",:parent_email => "ctfas@x.com" )
+mygrp << Student.create(:name => "Victor Racariu",:email => "racariu@gmail.com",:parent_email => "vic_parinti@x.com" )
+mygrp << Student.create(:name => "Tudor Tolciu",:email => "2dor@gmail.com",:parent_email => "madrii@x.com")
 
 mygrp = lesce.groups[0].courses 
 mygrp << Course.create(:name => "Informatica",:profesor => "Stefanescu Iulia")
